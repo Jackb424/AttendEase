@@ -1,0 +1,34 @@
+<div class="camera-container">
+  <h2>📷 Face Attendance Tracking</h2>
+
+  <div *ngIf="ongoingClass">
+    <h3>Ongoing Class: {{ ongoingClass.subject }}</h3>
+    <button (click)="startTracking()" [disabled]="tracking">
+      Start Tracking
+    </button>
+  </div>
+
+  <div *ngIf="!ongoingClass">
+    <p>No ongoing class at the moment.</p>
+  </div>
+
+  <div class="timetable">
+    <h3>Your Schedule</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Time</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cls of timetable">
+          <td>{{ cls.subject }}</td>
+          <td>{{ cls.start_time | date: 'shortTime' }} - {{ cls.end_time | date: 'shortTime' }}</td>
+          <td>{{ cls === ongoingClass ? 'Ongoing' : 'Upcoming' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="attendance-container">
+  <h2>📅 My Attendance</h2>
+
+  <!-- ✅ Show table only if attendance records exist -->
+  <table class="styled-table" *ngIf="attendanceRecords.length > 0; else noRecords">
+    <thead>
+      <tr>
+        <th>Module</th>
+        <th>Class Type</th>  <!-- ✅ New Column for Session Type -->
+        <th>Date</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of attendanceRecords">
+        <td>{{ record.module || 'Unknown Module' }}</td>  <!-- ✅ Separate Class Name -->
+        <td>{{ record.session_type || 'Unknown Type' }}</td>  <!-- ✅ Separate Class Type -->
+        <td>{{ record.attendance_time | date: 'yyyy-MM-dd' }}</td>
+        <td>{{ record.attendance_time | date: 'HH:mm:ss' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ✅ No Attendance Records Message -->
+  <ng-template #noRecords>
+    <div class="no-records-message">
+      <p>⚠️ No attendance records found for this user.</p>
+    </div>
+  </ng-template>
+
+  <!-- ✅ Open Camera Button (Always Visible) -->
+  <button (click)="openCameraPopup()" class="camera-btn">📷 Launch Attendance Camera</button>
+</div>

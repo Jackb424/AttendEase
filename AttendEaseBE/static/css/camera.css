@@ -1,0 +1,59 @@
+/* 📷 Camera Popup Styling (Matching Profile Page) */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #4d4d4d; /* ✅ Dark background like profile */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+h2 {
+    font-size: 28px;
+    color: #eb8aaf; /* ✅ Matching pink text */
+    padding: 15px 0;
+    background-color: #4d4d4d;
+    border-bottom: 2px solid #eb8aaf;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    background: #333; /* ✅ Darker box for contrast */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid #eb8aaf; /* ✅ Matching pink border */
+}
+
+#statusMessage {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    background: #eb8aaf;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Change text colors dynamically */
+.status-success {
+    background: #4caf50; /* ✅ Green for success */
+}
+
+.status-error {
+    background: #d9534f; /* ✅ Red for errors */
+}
+
+.status-waiting {
+    background: #eb8aaf; /* ✅ Matching pink for waiting */
+}

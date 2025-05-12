@@ -1,0 +1,29 @@
+<div class="profile-container">
+  <h2>👤 Your Profile</h2>
+
+  <!-- ✅ Profile Image (Centered on Top) -->
+<!-- ✅ Profile Image (Forced Refresh) -->
+<div class="profile-image-container">
+  <img *ngIf="user.profile_image" [src]="getProfileImage()" class="profile-pic" alt="Profile Picture">
+</div>
+
+
+  <!-- ✅ Profile Details Section -->
+  <div class="profile-card">
+    <div class="profile-right">
+      <p><strong>👤 Name:</strong> {{ user.name }}</p>
+      <p><strong>📩 Email:</strong> {{ user.email }}</p>
+      <p><strong>🆔 B0 Number:</strong> {{ user.b0_number }}</p>
+
+      <!-- ✅ Admins will NOT see attendance-related fields -->
+        <p><strong>📅 Total Attendance:</strong> {{ user.total_attendance }}</p>
+        <p><strong>🚫 Absences:</strong> {{ user.absentee_count || 0 }}</p>
+
+      <p><strong>🎓 {{ user.is_admin ? 'Teaches' : 'Course' }}:</strong> {{ user.course ?? 'Not Set' }}</p>
+      <p><strong>📍 Campus Location:</strong> {{ user.campus_location ?? 'Not Set' }}</p>
+    </div>
+  </div>
+
+  <!-- ✅ Edit Profile Button -->
+  <button class="edit-btn" (click)="navigateToEditProfile()">✏️ Edit Profile</button>
+</div>

@@ -1,0 +1,251 @@
+/* General Container */
+.container {
+  max-width: 1000px;
+  margin-top: 80px !important; 
+  margin-bottom: 50px !important;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #4d4d4d;
+  border-radius: 10px;
+  padding: 20px 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+/* Page Title */
+h2 {
+  font-size: 2rem !important;
+  font-weight: bold !important;
+  color: #eb8aaf !important;
+  text-align: center !important;
+  margin-bottom: 20px !important;
+}
+
+/* Section Titles */
+h3 {
+  color: #eb8aaf !important;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Open Camera Button */
+.text-center .btn-primary {
+  background-color: #eb8aaf;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.text-center .btn-primary:hover {
+  background-color: #d17a93;
+}
+
+/* Filter Inputs */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filters input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d17a93;
+  background-color: white;
+  color: black;
+}
+
+/* 🌑 Sleek Dark Table Styling */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #2a2a2a;
+  color: #ffffff;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* 🧠 Table Header */
+.table thead {
+  background-color: #ff8ac6;
+  color: #1e1e1e;
+}
+
+.table th {
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  border-bottom: 1px solid #d17a93;
+  background-color: #eb8aaf;
+}
+
+/* 📄 Table Body Rows */
+.table td {
+  padding: 12px 18px;
+  border-bottom: 1px solid #3d3d3d;
+  vertical-align: middle;
+  color: #ffffff;
+  background-color: #2e2e2e;
+}
+
+/* 🎨 Alternate Row Colors */
+.table tbody tr:nth-child(odd) td {
+  background-color: #3a3a3a;
+}
+
+.table tbody tr:nth-child(even) td {
+  background-color: #2e2e2e;
+}
+
+/* ✨ Hover Effect */
+.table tbody tr:hover td {
+  background-color: #444444;
+  transition: background-color 0.25s ease-in-out;
+}
+
+/* 🎯 Rounded Corners */
+.table thead tr:first-child th:first-child {
+  border-top-left-radius: 10px;
+}
+.table thead tr:first-child th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* ✨ Button Styles */
+.btn-warning,
+.btn-danger {
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  border: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ✏️ Yellow Edit Button */
+.btn-warning {
+  background-color: #ffcd4d;
+  color: #1e1e1e;
+}
+.btn-warning:hover {
+  background-color: #ffc107;
+  color: #1e1e1e;
+}
+
+/* ❌ Red Delete Button */
+.btn-danger {
+  background-color: #ff4d4d;
+  color: #ffffff;
+}
+.btn-danger:hover {
+  background-color: #e60000;
+  color: #ffffff;
+}
+
+/* 🛠️ Edit Modal */
+.edit-modal {
+  background-color: #3d3d3d;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin-top: 25px;
+  color: #ffffff;
+}
+
+.edit-modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 14px;
+  border-radius: 6px;
+  border: 1px solid #ff8ac6;
+  background-color: #2e2e2e;
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+/* ✅ Modal Buttons */
+.edit-modal .btn-success {
+  background-color: #66d19e;
+  color: #1e1e1e;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+}
+.edit-modal .btn-success:hover {
+  background-color: #4caf84;
+}
+
+.edit-modal .btn-secondary {
+  background-color: #7a7a7a;
+  color: white;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  margin-left: 10px;
+}
+.edit-modal .btn-secondary:hover {
+  background-color: #5c5c5c;
+}
+
+/* 📄 Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.pagination button {
+  background: #ff8ac6;
+  color: #1e1e1e;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #d17a93;
+  color: #ffffff;
+}
+
+.pagination button:disabled {
+  background-color: #555555;
+  color: #999999;
+  cursor: not-allowed;
+}
+
+/* 🎯 Button Wrapper in Table Cell */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* Equal width & center content inside buttons for uniformity */
+.table .btn-warning,
+.table .btn-danger {
+  min-width: 80px;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  font-weight: 600;
+}

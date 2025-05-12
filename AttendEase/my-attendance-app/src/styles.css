@@ -1,0 +1,148 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding-top: 60px;
+  font-family: 'Roboto', sans-serif;
+  color: #fff !important; /* ✅ Force text color to white */
+  background-color: #1e1e1e !important; /* ✅ Darker grey for overall contrast */
+}
+
+/* Links Styling */
+a {
+  color: #ff8ac6 !important; /* ✅ Pink links */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #d17a93 !important; /* ✅ Slightly darker hover effect */
+}
+
+/* 🎨 Tooltip Styling */
+.tooltip-class {
+  position: fixed;
+  background: rgba(30, 30, 30, 0.95); /* ✅ Dark grey background */
+  color: #ffffff !important; /* ✅ White text for readability */
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+  opacity: 0;
+  font-size: 14px;
+  max-width: 260px;
+  text-align: left;
+  transform: scale(0.95);
+}
+
+.tooltip-class.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 🎨 Tooltip Text Colors */
+.tooltip-class strong {
+  color: #ff4081; /* ✅ Title pink */
+}
+
+.tooltip-class .time {
+  color: #ffffff; /* ✅ White time text */
+}
+
+.tooltip-class .room {
+  color: #ffcc00; /* ✅ Room highlighted yellow */
+  font-weight: bold;
+}
+
+.tooltip-class .lecturer {
+  color: #40c4ff; /* ✅ Lecturer blue */
+  font-weight: bold;
+}
+
+/* 📅 Calendar Container */
+.calendar-container {
+  max-width: 1000px;
+  margin: 120px auto;
+  background-color: #4d4d4d !important; /* ✅ Dark grey for contrast */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  color: #ffffff !important; /* ✅ White text for clarity */
+}
+
+/* 📅 Calendar Background */
+.fc-theme-standard .fc-scrollgrid {
+  background-color: #3d3d3d !important;
+  border-radius: 10px;
+}
+
+/* 🕒 Time Labels (Left Sidebar) */
+.fc-timegrid-axis-cushion {
+  color: #ff8ac6 !important; /* ✅ Pink text */
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* 📏 Grid Lines */
+.fc-timegrid-slot {
+  border-bottom: 1px solid rgba(255, 138, 198, 0.4) !important; /* ✅ Soft pink grid lines */
+}
+
+/* 🌚 Dark Background for Time Slots */
+.fc-daygrid-body,
+.fc-timegrid-body {
+  background-color: #3d3d3d !important; /* ✅ Keep grid background dark */
+}
+
+/* 🗓️ Day Headers (Mon, Tue, Wed, etc.) */
+.fc-col-header-cell-cushion {
+  color: #ff8ac6 !important; /* ✅ Pink text */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* 📌 Event Boxes */
+.fc-event {
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 4px;
+}
+
+/* 🕒 Time Labels Background */
+.fc-timegrid-axis {
+  background-color: #3d3d3d !important; /* ✅ Darker grey */
+  border-right: 1px solid rgba(255, 138, 198, 0.4) !important; /* ✅ Pink border */
+}
+
+/* 🎨 Adjust Button Styling */
+.fc-button {
+  background-color: #ff8ac6 !important; /* ✅ Pink buttons */
+  color: #1e1e1e !important; /* ✅ Dark text for contrast */
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-weight: bold;
+}
+
+.fc-button:hover {
+  background-color: #d17a93 !important; /* ✅ Darker pink on hover */
+}
+
+/* 🎯 Now Indicator (Red Line for Current Time) */
+.fc-timegrid-now-indicator-container {
+  border-color: #ff4081 !important; /* ✅ Pinkish-red now indicator */
+}
+
+/* 🔳 Adjust Slot Duration to 1 Hour */
+.fc-timegrid-slot.fc-timegrid-slot-lane {
+  height: 60px !important; /* ✅ Ensure grid cells align properly */
+}
+
+/* 📅 Change Current Day Highlight to Pink */
+.fc-day-today {
+  background-color: rgba(255, 138, 198, 0.2) !important; /* ✅ Soft pink */
+}
+

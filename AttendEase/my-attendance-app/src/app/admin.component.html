@@ -1,0 +1,149 @@
+<div class="container">
+  <h2 class="dashboard-title">Admin Dashboard</h2>
+
+  <!-- ✅ Open Camera for Manual Attendance -->
+  <div class="text-center">
+    <button class="btn btn-primary open-camera-btn" (click)="openCameraPopup()">📷 Open Camera</button>
+  </div>
+
+  <!-- ✅ Attendance Logs -->
+  <div class="attendance-section">
+    <h3>📊Attendance Records</h3>
+
+    <!-- ✅ Filters (Live Search with (input) event) -->
+    <div class="filters">
+      <input type="text" [(ngModel)]="filterB0" (input)="updateFilters()" placeholder="🔍 Search B0 Number">
+      <input type="text" [(ngModel)]="filterClass" (input)="updateFilters()" placeholder="🔍 Search Class Name">
+      <input type="date" [(ngModel)]="filterDate" (input)="updateFilters()">
+    </div>
+
+    <!-- ✅ Attendance Table -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>B0 Number</th>
+          <th>Name</th>
+          <th>Class</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of paginatedRecords">
+          <td>{{ record.b0_number }}</td>
+          <td>{{ record.name }}</td>
+          <td>{{ record.module }}</td>
+          <td>{{ record.session_type }}</td>
+          <td>{{ record.attendance_time | date: 'yyyy-MM-dd' }}</td>
+          <td>{{ record.attendance_time | date: 'HH:mm:ss' }}</td>
+          <td>
+            <div class="action-buttons">
+              <button class="btn btn-warning" (click)="editAttendance(record)">Edit</button>
+              <button class="btn btn-danger" (click)="deleteAttendance(record._id)">Delete</button>
+            </div>
+          </td>          
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ✅ Pagination Controls -->
+    <div class="pagination">
+      <button class="btn btn-light" (click)="prevPageRecords()" [disabled]="currentPageRecords === 1">⬅ Previous</button>
+      <span>Page {{ currentPageRecords }} of {{ totalPagesRecords }}</span>
+      <button class="btn btn-light" (click)="nextPageRecords()" [disabled]="currentPageRecords === totalPagesRecords">Next ➡</button>
+    </div>
+  </div>
+
+  <!-- ✅ Edit Attendance Modal (Popup) -->
+  <div class="edit-modal-overlay" *ngIf="selectedRecord">
+    <div class="edit-modal">
+      <h4 class="modal-title">Edit Attendance</h4>
+
+      <label for="editModule">Class Name</label>
+      <input type="text" id="editModule" [(ngModel)]="selectedRecord.module" placeholder="Class">
+
+      <label for="editSessionType">Session Type</label>
+      <input type="text" id="editSessionType" [(ngModel)]="selectedRecord.session_type" placeholder="Type">
+
+      <label for="editAttendanceTime">Date & Time</label>
+      <input type="datetime-local" id="editAttendanceTime" [(ngModel)]="selectedRecord.attendance_time">
+
+      <div class="modal-actions">
+        <button class="btn btn-success" (click)="saveAttendance()">Save</button>
+        <button class="btn btn-secondary" (click)="selectedRecord = null">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Absentees Section (Moved Up) -->
+  <div class="absentee-section">
+    <p></p>
+    <h3>⚠️Absentees</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>B0 Number</th>
+          <th>Name</th>
+          <th>Class</th>
+          <th>Session Type</th>
+          <th>Time</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let absentee of paginatedAbsentees">
+          <td>{{ absentee.b0_number }}</td>
+          <td>{{ absentee.name }}</td>
+          <td>{{ absentee.module }}</td>
+          <td>{{ absentee.session_type }}</td>
+          <td>{{ absentee.start_time }} - {{ absentee.end_time }}</td>
+          <td>{{ absentee.date }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteAbsentee(absentee)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ✅ Absentee Pagination Controls -->
+    <div class="pagination">
+      <button class="btn btn-light" (click)="prevPageAbsentees()" [disabled]="currentPageAbsentees === 1">⬅ Previous</button>
+      <span>Page {{ currentPageAbsentees }} of {{ totalPagesAbsentees }}</span>
+      <button class="btn btn-light" (click)="nextPageAbsentees()" [disabled]="currentPageAbsentees === totalPagesAbsentees">Next ➡</button>
+    </div>
+  </div>
+
+  <!-- ✅ Audit Logs Section (Moved Down) -->
+  <div class="audit-section">
+    <p></p>
+    <h3>📝Audit Logs</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Admin</th>
+          <th>Action</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let log of paginatedLogs">
+          <td>{{ log.admin_name }}</td>
+          <td>{{ log.action }}</td>
+          <td>{{ log.timestamp | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ✅ Audit Logs Pagination -->
+    <div class="pagination">
+      <button class="btn btn-light" (click)="prevPageLogs()" [disabled]="currentPageLogs === 1">⬅ Previous</button>
+      <span>Page {{ currentPageLogs }} of {{ totalPagesLogs }}</span>
+      <button class="btn btn-light" (click)="nextPageLogs()" [disabled]="currentPageLogs === totalPagesLogs">Next ➡</button>
+    </div>
+  </div>
+</div>

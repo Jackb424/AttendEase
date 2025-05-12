@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Camera</title>
+    
+    <!-- ✅ Load CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/camera.css') }}">
+
+    <!-- ✅ Load JS -->
+    <script src="{{ url_for('static', filename='js/camera.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>📷 AttendEase Live Attendance</h2>
+        <img src="{{ url_for('face_attendance_bp.video_feed') }}" width="640" height="480">
+
+        <p id="statusMessage" class="status-error">Loading camera...</p> <!-- ✅ Default text -->
+    </div>
+</body>
+</html>

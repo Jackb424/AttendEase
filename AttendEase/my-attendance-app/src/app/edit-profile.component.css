@@ -1,0 +1,66 @@
+.edit-profile-container {
+    max-width: 500px;
+    margin: 80px auto;
+    background-color: #4d4d4d;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+  
+  .edit-profile-container h2 {
+    font-size: 2rem;
+    color: #eb8aaf;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+  }
+  
+  select, input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #eb8aaf;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+  }
+  
+  select:focus, input:focus {
+    outline: none;
+    border-color: #d17a93;
+    box-shadow: 0 0 5px rgba(219, 112, 147, 0.5);
+  }
+  
+  input[type="file"] {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 5px;
+  }
+  
+  .save-btn {
+    width: 100%;
+    background-color: #eb8aaf;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .save-btn:hover {
+    background-color: #d17a93;
+  }
+  

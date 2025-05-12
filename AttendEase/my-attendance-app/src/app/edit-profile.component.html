@@ -1,0 +1,18 @@
+<div class="edit-profile-container">
+  <h2>✏️ Edit Your Profile</h2>
+
+  <label>{{ isAdmin ? 'Select Teaching Course:' : 'Course:' }}</label>
+  <select [(ngModel)]="user.course">
+    <option *ngFor="let course of courses" [value]="course">{{ course }}</option>
+  </select>
+
+  <label>Campus Location:</label>
+  <select [(ngModel)]="user.campus_location">
+    <option *ngFor="let location of campusLocations" [value]="location">{{ location }}</option>
+  </select>
+
+  <label>Upload Profile Image:</label>
+  <input type="file" (change)="onFileSelected($event)">
+
+  <button class="save-btn" (click)="saveProfile()">Save Changes</button>
+</div>

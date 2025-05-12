@@ -1,0 +1,12 @@
+<div class="calendar-container">
+  <h2>📅 <span class="highlight">My Schedule</span></h2>
+
+  <!-- Show loading message -->
+  <p *ngIf="loading">⏳ Loading your schedule...</p>
+
+  <!-- Show error message -->
+  <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+  <!-- Show FullCalendar if no errors -->
+  <full-calendar *ngIf="!loading && !errorMessage" [options]="calendarOptions"></full-calendar>
+</div>
